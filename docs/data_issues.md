@@ -1,38 +1,49 @@
 # Data issues log (PriceCatcher, Jan-Jun 2026)
-Status: January checked; cross-month checks pending.
+Status: all six months checked (10,160,224 rows); basket selection pending.
 
 ## 1. Item codes missing from item lookup
-- Finding: 31,242 rows (1.58%), 14 codes between 2023 and 2096. Prices look normal (median RM7.20).
+- 154,441 rows (1.52%), 14 codes; 1.3-1.7% in every month. Prices look normal (January median RM7.20).
 - Decision: exclude from item-level analysis; report the share.
-- Status: recheck other months.
 
 ## 2. Inconsistent premise_type label
-- Finding: 'Pasar Basah ' (trailing space, 338 premises) vs 'Pasar Basah' (22).
-- Decision: strip whitespace and merge.
+- 'Pasar Basah ' (trailing space) vs 'Pasar Basah'. Decision: strip whitespace and merge.
 
 ## 3. Placeholder rows (code -1)
-- Finding: -1 rows in both lookups (blank item, premise type and state). No January prices use them.
-- Decision: no action; keep out of dimensions.
+- Both lookups have a -1 row (blank item/premise). No price row uses either in any month.
+- Decision: keep out of dimensions.
 
-## 4. Uneven reporting volume
-- Finding: typical day about 38k rows; spikes of 190k-215k on 5, 12, 19, 26 and 29 Jan; 1 Jan is low (10,757).
-- Spikes come mainly from Kedai Runcit, Pasar Mini and supermarkets; wet markets are steady.
-- Hypothesis (unconfirmed): batch uploads by some premises.
+## 4. Missing calendar days
+- 167 of 181 days present; 14 missing.
+- 9 match national public holidays (17-18 Feb, 21-23 Mar, 1 May, 27 May, 1 Jun, 17 Jun). 20 Mar was likely an additional declared Raya holiday (sources differ).
+- Unexplained: 13 Feb, 14 Mar, 19 Mar, 20 Jun.
+- 1 Jan has few rows (10,757), plausibly because it was a holiday in most states (unconfirmed).
+- Decision: do not fill gaps; compare averages per premise and day, never monthly totals.
+
+## 5. Uneven reporting volume
+- Typical day about 38k rows; Monday spikes (5, 12, 19, 26 Jan) and 29 Jan reach 190k-215k, mainly Kedai Runcit, Pasar Mini and supermarkets.
+- Hypothesis (unconfirmed): batch uploads.
 - Decision: average per premise first, then aggregate to premise type and state.
 
-## 5. Extreme high prices
-- Finding: 40 rows above 5x the item median (up to 150x). Mixed pattern, not one error type; scattered across many premises.
-- Decision: flag and exclude from main analysis; do not auto-correct; use medians.
+## 6. High outliers
+- 207 rows above 5x the item median (26-49 per month). Mixed pattern, scattered across premises; only about a quarter look like sen/ringgit errors.
+- Decision: do not auto-correct; exclude from main analysis.
 
-## 6. Extreme low prices (not yet investigated)
-- Finding: 298 rows below 0.2x the item median.
+## 7. Low outliers
+- 1,649 rows below 0.2x the item median (145-408 per month). January: mostly leafy vegetables and fish sold per kg; two premises supply 37 of 298. Unclear whether typos or end-of-day discounts.
+- Decision: exclude rows outside 0.2x-5x of the item median; run a sensitivity check with and without the filter.
 
-## 7. Possible missing premise types (to verify)
-- Finding: restaurant, food court, Medan Selera and Kedai Serbaneka types do not appear in January daily counts.
+## 8. Premise types
+- Retail types report at scale: Pasar Raya/Supermarket (53.7% of rows), Pasar Basah (18.2%), Hypermarket (12.6%), Pasar Mini (11.1%), Kedai Runcit (4.4%).
+- Borong: 207 rows (Jan-Feb only), excluded. Restaurant types, Foodcourt, Medan Selera and Kedai Serbaneka: no prices.
+- Decision: analyse the five retail types; weight premises equally within type.
 
-## 8. Date stored as text
+## 9. Item coverage
+- Only 339 of 796 lookup items have prices. Prepared-food and convenience-store groups have none. Fresh goods are 58% of rows.
+- Decision: choose the basket from items present in all six months.
+
+## 10. Date stored as text
 - Decision: convert to DATE on load.
 
 ## Method notes
 - Prices are comparable only within the same item (units differ).
-- Data is for price surveillance, not inflation analysis.surveillance, not inflation analysis.
+- Data is for price surveillance, not inflation analysis.
