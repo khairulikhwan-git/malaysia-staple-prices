@@ -1,5 +1,23 @@
 -- sanity check:
 
+select count(*) as basket_rows,
+		sum(is_outlier::int) as outliers,
+		round(100.0 * avg(is_outlier::int), 3) as outlier_pct
+from basket_prices;
+--
+select premise_type,
+		count(distinct premise_code) as premises,
+		count(*) as n_rows
+from basket_prices
+group by premise_type
+order by n_rows desc;
+--
+select item, unit, count(*) as n_rows,
+	sum(is_outlier::int) as outliers
+from basket_prices
+group by item, unit
+order by outliers desc;
+--
 select count (*) as premise_item_pairs,
        count(distinct premise_code) as premises,
        sum(n_obs) as rows_used
