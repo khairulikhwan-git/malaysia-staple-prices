@@ -1,5 +1,6 @@
 -- state view (state_gaps)
 
+drop view if exists state_gaps;
 create view state_gaps as 
 with state_item as (
 	select item_code, item, unit, state,
