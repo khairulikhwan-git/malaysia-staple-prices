@@ -62,6 +62,36 @@ join full_items f on f.item = g.item and f.unit = g.unit
 group by g.premise_type
 order by avg_gap_pct;
 
+-- robustness: the same 17 items, without onions
+
+with full_items as (
+    select item, unit
+    from type_gaps
+    group by item, unit
+    having count (*) = 5
+)
+select g.premise_type, count (*) as items, round(avg(gap_pct), 1) as avg_gap_pct
+from type_gaps g
+join full_items f on f.item = g.item and f.unit = g.unit
+where g.item not like 'BAWANG%'
+group by g.premise_type
+order by avg_gap_pct;
+
+-- robustness: the same 17 items, without cooking oil
+
+with full_items as (
+    select item, unit
+    from type_gaps
+    group by item, unit
+    having count (*) = 5
+)
+select g.premise_type, count (*) as items, round(avg(gap_pct), 1) as avg_gap_pct
+from type_gaps g
+join full_items f on f.item = g.item and f.unit = g.unit
+where g.item not like 'MINYAK%'
+group by g.premise_type
+order by avg_gap_pct;
+
 -- state gaps (how many premises each state):
 
 select state, count (distinct premise_code) as premises
