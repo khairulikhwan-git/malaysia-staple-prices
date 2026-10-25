@@ -53,6 +53,21 @@ select s.item, s.unit, s.state, s.premises,
 from state_item s
 join overall o on o.item_code = s.item_code;
 
+-- state gaps (how many premises each state):
+
+select state, count (distinct premise_code) as premises
+from premise_item_prices
+group by state
+order by premises desc;
+
+-- avg_gap_pct and min_premises for each state:
+
+select state, count (*) as items, round (avg(gap_pct), 1) as avg_gap_pct,
+		min(premises) as min_premises
+from state_gaps
+group by state
+order by avg_gap_pct;
+
 --check ranking for supermarket-only state:
 
 select state, count(*) as items, round(avg(gap_pct), 1) as avg_gap_pct,
@@ -60,3 +75,10 @@ select state, count(*) as items, round(avg(gap_pct), 1) as avg_gap_pct,
 from state_gaps_supermarket
 group by state
 order by avg_gap_pct desc;
+
+-- Sabah and Sarawak supermarkets: is the premium broad across items?
+
+select state, item, unit, premises, state_price, overall_price, gap_pct
+from state_gaps_supermarket
+where state in ('Sabah', 'Sarawak')
+order by state, gap_pct desc;

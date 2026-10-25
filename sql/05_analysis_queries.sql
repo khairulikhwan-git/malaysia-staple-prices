@@ -23,6 +23,7 @@ select count (*) as premise_item_pairs,
        sum(n_obs) as rows_used
 from premise_item_prices;
 
+-- exploratory: item sets differ by premise type (not comparable); use the 17-item version below
 -- output check (headline by premise type):
 
 select premise_type,
@@ -91,26 +92,3 @@ join full_items f on f.item = g.item and f.unit = g.unit
 where g.item not like 'MINYAK%'
 group by g.premise_type
 order by avg_gap_pct;
-
--- state gaps (how many premises each state):
-
-select state, count (distinct premise_code) as premises
-from premise_item_prices
-group by state
-order by premises desc;
-
--- avg_gap_pct and min_premises for each state:
-
-select state, count (*) as items, round (avg(gap_pct), 1) as avg_gap_pct,
-		min(premises) as min_premises
-from state_gaps
-group by state
-order by avg_gap_pct;
-
---check ranking for supermarket-only state:
-
-select state, count(*) as items, round(avg(gap_pct), 1) as avg_gap_pct,
-       min(premises) as min_premises
-from state_gaps_supermarket
-group by state
-order by avg_gap_pct desc;
