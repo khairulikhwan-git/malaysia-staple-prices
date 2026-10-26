@@ -29,3 +29,13 @@ group by item_code, item, unit
 having count (*) = 6;
 
 select * from item_volatility order by range_pct desc;
+
+-- monthly prices: eggs, chicken wing, Sauh flour
+
+select item, unit, to_char(price_month, 'YYYY-MM') as month, premises,
+       round(month_price::numeric, 2) as month_price
+from item_monthly
+where item like 'TELUR%'
+   or item like 'KEPAK AYAM%'
+   or item like 'TEPUNG GANDUM NGP (BERBUNGKUS, CAP SAU%'
+order by item, price_month;
