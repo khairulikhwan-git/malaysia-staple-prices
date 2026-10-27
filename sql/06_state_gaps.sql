@@ -62,16 +62,20 @@ order by premises desc;
 
 -- avg_gap_pct and min_premises for each state:
 
-select state, count (*) as items, round (avg(gap_pct), 1) as avg_gap_pct,
-		min(premises) as min_premises
+select state, count (*) as items,
+        round (avg (gap_pct), 1) as avg_gap_pct,
+        round ((percentile_cont (0.5) within group (order by gap_pct))::numeric, 1) as median_gap_pct,
+        min (premises) as min_premises
 from state_gaps
 group by state
-order by avg_gap_pct;
+order by avg_gap_pct desc;
 
 --check ranking for supermarket-only state:
 
-select state, count(*) as items, round(avg(gap_pct), 1) as avg_gap_pct,
-       min(premises) as min_premises
+select state, count (*) as items,
+        round (avg (gap_pct), 1) as avg_gap_pct,
+        round ((percentile_cont (0.5) within group (order by gap_pct))::numeric, 1) as median_gap_pct,
+        min (premises) as min_premises
 from state_gaps_supermarket
 group by state
 order by avg_gap_pct desc;
