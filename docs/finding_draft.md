@@ -12,7 +12,7 @@
 
 ## Month to month (sql/07)
 - Eggs fell from January to April/May: Grade A 13.99 to 12.25, B 13.50 to 10.50, C 12.90 to 8.25, with a partial June recovery. No festive-season rise visible. Cause unknown.
-- Chicken wing (RM15.90) and Sauh flour (RM3.20): identical all six months. Reason not checked.
+- Chicken wing (median RM15.90) and Sauh flour (median RM3.20): the median is unchanged across all six months, but individual shops charge a wide range (wing: most common price RM15.99 covers only 11% of rows; flour: most common RM3.50 covers 15%). Not a fixed price; cause unknown.
 - The four cooking oil items sit at the maximum retail prices (RM13.30 for 2 kg, RM30.90 for 5 kg), so they are regulated.
 
 ## Caveats

@@ -39,3 +39,24 @@ where item like 'TELUR%'
    or item like 'KEPAK AYAM%'
    or item like 'TEPUNG GANDUM NGP (BERBUNGKUS, CAP SAU%'
 order by item, price_month;
+
+-- most common prices: chicken wing and Sauh flour (no single dominant price)
+
+with counts as (
+		select item, price, count (*) as n_rows
+		from basket_prices
+		where item like 'KEPAK AYAM%'
+			or item like 'TEPUNG GANDUM NGP (BERBUNGKUS, CAP SAU%'
+		group by item, price
+),
+ranked as (
+		select item, price, n_rows,
+				sum (n_rows) over (partition by item) as total_rows,
+				row_number () over (partition by item order by n_rows desc) as rnk
+		from counts
+)
+select item, price, n_rows,
+		round (100.0 * n_rows / total_rows, 1) as pct_of_rows
+from ranked
+where rnk <= 5
+order by item, rnk;
