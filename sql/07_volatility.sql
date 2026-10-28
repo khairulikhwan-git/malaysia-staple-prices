@@ -60,3 +60,19 @@ select item, price, n_rows,
 from ranked
 where rnk <= 5
 order by item, rnk;
+
+-- spread of shop prices (p10, p50, p90): chicken wing and Sauh flour
+
+with q as (
+	select item, unit,
+			count (*) as premises,
+			round ((percentile_cont (0.1) within group (order by price_median))::numeric, 2) as p10,
+			round ((percentile_cont (0.5) within group (order by price_median))::numeric, 2) as p50,
+			round ((percentile_cont (0.9) within group (order by price_median))::numeric, 2) as p90
+	from premise_item_prices
+	where item like 'KEPAK AYAM%'
+		or item like 'TEPUNG GANDUM NGP (BERBUNGKUS, CAP SAU%'
+	group by item, unit
+)
+select *, round (100 * (p90 - p10) / p50, 1) as spread_pct
+from q;
