@@ -20,3 +20,8 @@
 ## Caveats
 - 10,160,224 rows; 14 of 181 days missing (9 match public holidays, 4 unexplained); 1.52% of rows have item codes missing from the lookup.
 - Price-surveillance data, not an inflation measure.
+
+## Robustness: Raya price scheme (sql/08)
+- Onion and garlic prices by premise type, all days vs excluding 14-28 March 2026 (20 item and premise-type combinations): 18 identical; two differ slightly (Bawang besar kuning/holland at Pasar Basah RM4.50 to 4.80; Bawang kecil merah biasa import (India) at Pasar Mini RM4.99 to 4.90). The large gaps between hypermarkets and wet markets/small shops are unchanged, so the scheme does not drive the premise-type result. Cause of the two small differences not investigated.
+- 73 shop-item pairs reported only on scheme days and drop out of the comparison (28,597 to 28,524).
+- Scheme ceilings for yellow onion, red onion, India small red onion and Chinese garlic were lowered vs 2025 (source: https://www.astroawani.com/berita-malaysia/shmmp-aidilfitri-2026-27-barangan-disenaraikan-kacang-dal-tambahan-baharu).
