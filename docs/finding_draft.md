@@ -11,8 +11,9 @@
 - A few items drive the averages (small onions, eggs, standard chicken). Labuan, Perlis and Putrajaya rest on thin data.
 
 ## Month to month (sql/07)
-- Eggs fell from January to April/May: Grade A 13.99 to 12.25, B 13.50 to 10.50, C 12.90 to 8.25, with a partial June recovery. No festive-season rise visible. Cause unknown.
-- Chicken wing (median RM15.90) and Sauh flour (median RM3.20): the median is unchanged across all six months, but individual shops charge a wide range (wing: most common price RM15.99 covers only 11% of rows; flour: most common RM3.50 covers 15%). Not a fixed price; cause unknown.
+- Eggs: Grade A fell 12% from January (13.99) to May (12.25); B and C fell more (lowest in April: 10.50 and 8.25). Eggs were not on the Raya maximum-price scheme list (SHMMP, 14-28 March 2026; source: https://www.kpdn.gov.my/images/2025/pengumuman/SENARAI-BARANGAN-SHMMP-HARI-RAYA-PUASA-2026.pdf), and the largest drops came after the scheme ended, so it does not explain the fall. A reported egg supply surplus in early 2026 (source: https://www.utusan.com.my/berita/2026/04/harga-telur-ayam-jatuh-lebihan-bekalan-di-pasaran/) is consistent with the pattern but untested here.
+- SHMMP also listed onions and garlic for 14-28 March, so March onion prices may have been capped. Chicken wing was controlled only in Sabah, Sarawak and Labuan, and flour was not listed.
+- External chart (source: https://zscommerce.my/harga/telur-ayam-gred-a, average price per 30 eggs): RM13.48 (Mar), 12.26 (Apr, May), 13.33 (Jun), rising to 15.49 (Sep). Consistent with the April-May low here; different method, not used for results.
 - The four cooking oil items sit at the maximum retail prices (RM13.30 for 2 kg, RM30.90 for 5 kg), so they are regulated.
 - Shop-to-shop spread (one median per shop, outliers excluded): the middle 80% of shops price chicken wing between RM13.59 and RM17.90 (median RM15.90, 1,223 premises) and Sauh flour between RM2.90 and RM3.80 (median RM3.20, 1,853 premises); spread is about 27-28% of the median for both.
 
