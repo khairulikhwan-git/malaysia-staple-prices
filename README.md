@@ -3,6 +3,9 @@
 ## Business question
 Where are the biggest price gaps for everyday staple items across premise types and states in Malaysia, and which items are the most volatile month to month?
 
+## Key findings
+(to be written)
+
 ## Data
 PriceCatcher dataset, published on OpenDOSM (open.dosm.gov.my) under CC BY 4.0.
 
@@ -29,9 +32,19 @@ Note: this data is collected for price surveillance, so this project does not ma
 ## Tools
 PostgreSQL, Python (pandas), Power BI
 
+## Limitations
+(to be written)
+
+## How to reproduce
+1. Install PostgreSQL and create a database named `malaysia_staple_prices`.
+2. Run `notebooks/01_explore.ipynb`: it downloads the PriceCatcher files (Jan-Jun 2026) into `data/raw` and builds `docs/basket_items.csv`.
+3. Run `sql/01_schema.sql` in pgAdmin to create the tables.
+4. Run `notebooks/02_load_postgres.ipynb`. Edit the port in its first cell if yours differs; it asks for your PostgreSQL password when you run it.
+5. Run `sql/02_constraints.sql` to `sql/08_scheme_check.sql`, in numeric order.
+
 ## Status
-- [ ] Load and clean data
-- [ ] SQL analysis
+- [x] Load and clean data
+- [x] SQL analysis
 - [ ] Power BI dashboard
 - [ ] Findings and recommendations
 
