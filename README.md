@@ -4,7 +4,8 @@
 Where are the biggest price gaps for everyday staple items across premise types and states in Malaysia, and which items are the most volatile month to month?
 
 ## Key findings
-(to be written)
+** Price gaps by premise type.**
+Across the 17 basket items sold in all five premise types (Jan-Jun 2026), hypermarkets were the cheapest, averaging 7.8% below the typical premise price, and wet markets (Pasar Basah) the most expensive, averaging 7.2% above it. The order stayed the same when onions or cooking oil were excluded, although the hypermarket-to-wet-market gap ranged from 7.6 to 19.3 points depending on which items were included. The data covers six months and only these basket items, and it compares premise types rather than measuring inflation.
 
 ## Data
 PriceCatcher dataset, published on OpenDOSM (open.dosm.gov.my) under CC BY 4.0.
