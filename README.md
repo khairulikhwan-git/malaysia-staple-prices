@@ -10,6 +10,13 @@ Across the 17 basket items sold in all five premise types (Jan-Jun 2026), hyperm
 **Price gaps by state.**
 Price gaps by state. Measured against the national median price for each item, Sabah (+13.9%) and Sarawak (+10.1%) show the largest average gaps, every other state falls between -3.7% and +2.6%. The typical item is much closer to the national price (median gap +2.0% in Sabah, +1.6% in Sarawak): in supermarkets, the premium comes mainly from a few items — onions, standard chicken and eggs — and Sabah and Sarawak stay on top when only supermarkets are compared (+18.7% and +14.1%). Labuan, Perlis and Putrajaya have the fewest premises (15, 38 and 28), so their figures are less reliable, and the data cannot show why prices differ.
 
+**Month-to-month movement.**
+Egg prices. Between January and May 2026, median egg prices fell for all three grades: Grade A by 12% (RM13.99 to RM12.25), Grade B by 21% (RM13.50 to RM10.60) and Grade C by 26% (RM12.90 to RM9.60), with the lowest points in April and May. Eggs were not on the Eid al-Fitr maximum-price scheme (SHMMP, 14-28 March), and the largest drops came after it ended, so the scheme does not explain the fall. An Utusan report of an egg supply surplus in early 2026 (title, date) fits the pattern, but this data cannot test it.
+
+Items whose prices barely moved. Onions and garlic were on the scheme list, but excluding 14-28 March changed only 2 of 20 premise-type medians, both slightly, so the scheme does not drive the results. Chicken wing and Sauh flour had the same national median in all six months (RM15.90 and RM3.20) although neither was price-controlled in Peninsular Malaysia (wing only in Sabah, Sarawak and Labuan; flour not listed); the reason is unknown.
+
+Regulated items and shop-to-shop spread. Bottled cooking oil sits at or near the government’s maximum retail prices (RM13.30 for 2 kg, RM30.90 for 5 kg), so it shows almost no variation by design. For wing and flour, shops differ widely even though the median is stable: the middle 80% of shops charge RM13.59-17.90 for wing and RM2.90-3.80 for flour, a spread of about 27-28% of the median.
+
 ## Data
 PriceCatcher dataset, published on OpenDOSM (open.dosm.gov.my) under CC BY 4.0.
 
