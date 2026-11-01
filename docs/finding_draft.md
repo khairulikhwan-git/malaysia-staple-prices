@@ -12,8 +12,8 @@
 
 ## Month to month (sql/07)
 - Eggs: Grade A fell 12% from January (13.99) to May (12.25); B and C fell more (lowest in April: 10.50 and 8.25). Eggs were not on the Raya maximum-price scheme list (SHMMP, 14-28 March 2026; source: https://www.kpdn.gov.my/images/2025/pengumuman/SENARAI-BARANGAN-SHMMP-HARI-RAYA-PUASA-2026.pdf), and the largest drops came after the scheme ended, so it does not explain the fall. A reported egg supply surplus in early 2026 (source: https://www.utusan.com.my/berita/2026/04/harga-telur-ayam-jatuh-lebihan-bekalan-di-pasaran/) is consistent with the pattern but untested here.
-- SHMMP also listed onions and garlic for 14-28 March, so March onion prices may have been capped. Chicken wing was controlled only in Sabah, Sarawak and Labuan, and flour was not listed.
-- External chart (source: https://zscommerce.my/harga/telur-ayam-gred-a, average price per 30 eggs): RM13.48 (Mar), 12.26 (Apr, May), 13.33 (Jun), rising to 15.49 (Sep). Consistent with the April-May low here; different method, not used for results.
+- - SHMMP listed onions and garlic for 14-28 March; excluding those days changed only 2 of 20 premise-type medians (see Robustness), so the scheme does not drive the results. Chicken wing was controlled only in Sabah, Sarawak and Labuan, and flour was not listed.
+- External chart for Grade A eggs (source: https://zscommerce.my/harga/telur-ayam-gred-a, average price per 30 eggs): RM13.48 (Mar), 12.26 (Apr, May), 13.33 (Jun), rising to 15.49 (Sep). Consistent with the April-May low here; different method, not used for results.
 - The four cooking oil items sit at the maximum retail prices (RM13.30 for 2 kg, RM30.90 for 5 kg), so they are regulated.
 - Shop-to-shop spread (one median per shop, outliers excluded): the middle 80% of shops price chicken wing between RM13.59 and RM17.90 (median RM15.90, 1,223 premises) and Sauh flour between RM2.90 and RM3.80 (median RM3.20, 1,853 premises); spread is about 27-28% of the median for both.
 

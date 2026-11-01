@@ -4,14 +4,15 @@
 Where are the biggest price gaps for everyday staple items across premise types and states in Malaysia, and which items are the most volatile month to month?
 
 ## Key findings
-** Price gaps by premise type.**
+**Price gaps by premise type.**
 Across the 17 basket items sold in all five premise types (Jan-Jun 2026), hypermarkets were the cheapest, averaging 7.8% below the typical premise price, and wet markets (Pasar Basah) the most expensive, averaging 7.2% above it. The order stayed the same when onions or cooking oil were excluded, although the hypermarket-to-wet-market gap ranged from 7.6 to 19.3 points depending on which items were included. The data covers six months and only these basket items, and it compares premise types rather than measuring inflation.
 
 **Price gaps by state.**
-Price gaps by state. Measured against the national median price for each item, Sabah (+13.9%) and Sarawak (+10.1%) show the largest average gaps, every other state falls between -3.7% and +2.6%. The typical item is much closer to the national price (median gap +2.0% in Sabah, +1.6% in Sarawak): in supermarkets, the premium comes mainly from a few items — onions, standard chicken and eggs — and Sabah and Sarawak stay on top when only supermarkets are compared (+18.7% and +14.1%). Labuan, Perlis and Putrajaya have the fewest premises (15, 38 and 28), so their figures are less reliable, and the data cannot show why prices differ.
+Measured against the national median price for each item, Sabah (+13.9%) and Sarawak (+10.1%) show the largest average gaps, every other state falls between -3.7% and +2.6%. The typical item is much closer to the national price (median gap +2.0% in Sabah, +1.6% in Sarawak): in supermarkets, the premium comes mainly from a few items — onions, standard chicken and eggs — and Sabah and Sarawak stay on top when only supermarkets are compared (+18.7% and +14.1%). Labuan, Perlis and Putrajaya have the fewest premises (15, 38 and 28), so their figures are less reliable, and the data cannot show why prices differ.
 
 **Month-to-month movement.**
-Egg prices. Between January and May 2026, median egg prices fell for all three grades: Grade A by 12% (RM13.99 to RM12.25), Grade B by 21% (RM13.50 to RM10.60) and Grade C by 26% (RM12.90 to RM9.60), with the lowest points in April and May. Eggs were not on the Eid al-Fitr maximum-price scheme (SHMMP, 14-28 March), and the largest drops came after it ended, so the scheme does not explain the fall. An Utusan report of an egg supply surplus in early 2026 (title, date) fits the pattern, but this data cannot test it.
+Egg prices. Between January and May 2026, median egg prices fell for all three grades: Grade A by 12% (RM13.99 to RM12.25), Grade B by 21% (RM13.50 to RM10.60) and Grade C by 26% (RM12.90 to RM9.60), with the lowest points in April and May. Eggs were not on the Eid al-Fitr maximum-price scheme (SHMMP, 14-28 March), and the largest drops came after it ended, so the scheme does not explain the fall. An Utusan report of an egg supply surplus in early 2026 
+(Harga telur ayam jatuh lebihan bekalan di pasaran, 14 Apr 2026) fits the pattern, but this data cannot test it.
 
 Items whose prices barely moved. Onions and garlic were on the scheme list, but excluding 14-28 March changed only 2 of 20 premise-type medians, both slightly, so the scheme does not drive the results. Chicken wing and Sauh flour had the same national median in all six months (RM15.90 and RM3.20) although neither was price-controlled in Peninsular Malaysia (wing only in Sabah, Sarawak and Labuan; flour not listed); the reason is unknown.
 
@@ -19,6 +20,7 @@ Regulated items and shop-to-shop spread. Bottled cooking oil sits at or near the
 
 ## Data
 PriceCatcher dataset, published on OpenDOSM (open.dosm.gov.my) under CC BY 4.0.
+Note: this data is collected for price surveillance, so this project does not make inflation claims.
 
 ## Staple basket (selection rule)
 Categories were chosen before looking at prices: rice, cooking oil, eggs,
@@ -37,8 +39,6 @@ Limitations
 - Meat is excluded: no meat item reaches 500 premises.
 - Rice coverage is limited to imported brands.
 - Only 30-egg trays qualify for eggs.
-
-Note: this data is collected for price surveillance, so this project does not make inflation claims.
 
 ## Tools
 PostgreSQL, Python (pandas), Power BI
@@ -59,3 +59,9 @@ PostgreSQL, Python (pandas), Power BI
 - [ ] Power BI dashboard
 - [ ] Findings and recommendations
 
+## Sources
+- PriceCatcher, OpenDOSM (CC BY 4.0): https://open.dosm.gov.my/data-catalogue/pricecatcher
+- KPDN, Eid al-Fitr 2026 maximum-price scheme list: (https://www.kpdn.gov.my/images/2025/pengumuman/SENARAI-BARANGAN-SHMMP-HARI-RAYA-PUASA-2026.pdf)
+- Utusan Malaysia, "Harga teluar ayam jatuh lebihan bekalan di pasaran", 14 Apr 2026: (https://www.utusan.com.my/berita/2026/04/harga-telur-ayam-jatuh-lebihan-bekalan-di-pasaran/)
+- Astro Awani, Eid al-Fitr 2026 scheme ceilings: (https://www.astroawani.com/berita-malaysia/shmmp-aidilfitri-2026-27-barangan-disenaraikan-kacang-dal-tambahan-baharu)
+- ZS Commerce, Grade A egg price chart (average price per 30 eggs): (https://zscommerce.my/harga/telur-ayam-gred-a, average price per 30 eggs)
