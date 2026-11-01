@@ -44,7 +44,12 @@ Limitations
 PostgreSQL, Python (pandas), Power BI
 
 ## Limitations
-(to be written)
+
+Coverage: the analysis uses 21 basket items (rice, cooking oil, eggs, chicken, onions and flour) in five retail premise types. Only 339 of the 796 items in the lookup have any price in this period, and restaurants and wholesale (Borong) are not covered.
+Time: six months (Jan-Jun 2026). 14 of 181 days are missing: 9 match public holidays, 1 (20 March) was probably an additional Raya holiday, and 4 are unexplained.
+Data quality: 154,441 rows (1.52%) have item codes that don’t appear in the item lookup and are excluded from item-level analysis. 159 basket rows (0.012%) were flagged as extreme prices (below 0.2× or above 5× the item median) and excluded.
+Choices made after looking at the data: the 500-premise threshold for the basket, the cap of four items per category, the 10-premise minimum per group and the outlier rule. Different thresholds could change the numbers.
+Interpretation: gaps are measured against the median premise price for each item. They are not shop margins, and the data is for price surveillance, so this is not an inflation measure. It also cannot explain why prices differ, such as the egg fall or the Sabah and Sarawak premium.
 
 ## How to reproduce
 1. Install PostgreSQL and create a database named `malaysia_staple_prices`.
