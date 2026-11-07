@@ -59,3 +59,19 @@ select 'Supermarkets only', state,
        min(premises)
 from state_gaps_supermarket
 group by state;
+
+-- Dashboard view 3: egg prices by month
+
+drop view if exists dash_egg_monthly;
+
+create view dash_egg_monthly as
+select 
+    replace(item, 'TELUR AYAM GRED ', 'Grade ') as grade,
+    to_char (price_month, 'YYYY-MM') as month,
+    round(month_price::numeric, 2) as median,
+    premises,
+    round(((month_price - first_value(month_price) over w) / first_value(month_price) over w * 100)::numeric, 2) as pct_diff
+from item_monthly
+where item like 'TELUR%'
+  and price_month between '2026-01-01' and '2026-06-30'
+window w as (partition by item order by price_month);
