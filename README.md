@@ -18,6 +18,13 @@ Items whose prices barely moved. Onions and garlic were on the scheme list, but 
 
 Regulated items and shop-to-shop spread. Bottled cooking oil sits at or near the government’s maximum retail prices (RM13.30 for 2 kg, RM30.90 for 5 kg), so it shows almost no variation by design. For wing and flour, shops differ widely even though the median is stable: the middle 80% of shops charge RM13.59-17.90 for wing and RM2.90-3.80 for flour, a spread of about 27-28% of the median.
 
+## Dashboard
+Power BI report: `powerbi/staple_prices.pbix` (three pages, each with a caption).
+
+![Price gap by premise type](docs/dashboard_shop_types.png)
+![Price gap by state](docs/dashboard_states.png)
+![Egg prices by month](docs/dashboard_eggs.png)
+
 ## Data
 PriceCatcher dataset, published on OpenDOSM (open.dosm.gov.my) under CC BY 4.0.
 Note: this data is collected for price surveillance, so this project does not make inflation claims.
@@ -61,7 +68,7 @@ Interpretation: gaps are measured against the median premise price for each item
 ## Status
 - [x] Load and clean data
 - [x] SQL analysis
-- [ ] Power BI dashboard
+- [x] Power BI dashboard
 - [ ] Findings and recommendations
 
 ## Sources
