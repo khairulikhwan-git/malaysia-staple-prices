@@ -18,6 +18,17 @@ Items whose prices barely moved. Onions and garlic were on the scheme list, but 
 
 Regulated items and shop-to-shop spread. Bottled cooking oil sits at or near the government’s maximum retail prices (RM13.30 for 2 kg, RM30.90 for 5 kg), so it shows almost no variation by design. For wing and flour, shops differ widely even though the median is stable: the middle 80% of shops charge RM13.59-17.90 for wing and RM2.90-3.80 for flour, a spread of about 27-28% of the median.
 
+## Method
+Short version of what I did and why. Details: `docs/data_issues.md` (issues log), `notebooks/01_explore.ipynb` (exploration), `sql/` (numbered scripts).
+
+**1. Data quality checks.** (to be written)
+
+**2. Cleaning decisions.** (to be written)
+
+**3. Exploratory analysis.** (to be written)
+
+**4. Data model.** (to be written)
+
 ## Dashboard
 Power BI report: `powerbi/staple_prices.pbix` (three pages, each with a caption).
 
