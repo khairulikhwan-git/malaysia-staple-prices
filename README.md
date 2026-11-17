@@ -21,13 +21,16 @@ Regulated items and shop-to-shop spread. Bottled cooking oil sits at or near the
 ## Method
 Short version of what I did and why. Details: `docs/data_issues.md` (issues log), `notebooks/01_explore.ipynb` (exploration), `sql/` (numbered scripts).
 
-**1. Data quality checks.** (to be written)
+1. Data quality checks and cleaning decisions.
 
-**2. Cleaning decisions.** (to be written)
+Item codes missing from the lookup: checked each price row’s item code against the item table; 154,441 rows (1.52%) had no match, steadily 1.3-1.7% in every month. Decided to exclude them from item-level analysis and report the share, and not to enforce a foreign key on item_code in the database.
+Missing days and uneven reporting: checked all 181 days; 14 were missing (9 match public holidays, 1 probably an extra Raya holiday, 4 unexplained). In January, daily row counts jumped from about 38,000 on a typical day to 190,000-215,000 on some days (cause unconfirmed, possibly bulk uploads). Decided not to fill the gaps or compare totals, and to take each premise’s median price first, so busy and missing days wouldn’t skew the results.
+Extreme prices: compared each price with its item’s median; across all items, 1,856 rows were extreme (207 above 5x the median, 1,649 below 0.2x). In the 21-item basket, 159 rows (0.012%) were flagged and excluded, since they are probably data-entry errors or extreme discounts that I can’t tell apart.
+Premise types: checked which shop types report prices; five retail types carry the data (supermarkets alone are 53.7% of rows), wholesale (Borong) had 207 rows and restaurant-type premises reported none. Decided to analyse the five retail types and give each premise equal weight within its type.
 
-**3. Exploratory analysis.** (to be written)
+**2. Exploratory analysis.** (to be written)
 
-**4. Data model.** (to be written)
+**3. Data model.** (to be written)
 
 ## Dashboard
 Power BI report: `powerbi/staple_prices.pbix` (three pages, each with a caption).
