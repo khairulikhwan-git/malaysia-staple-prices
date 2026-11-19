@@ -30,7 +30,12 @@ Premise types: checked which shop types report prices; five retail types carry t
 
 **2. Exploratory analysis.** (to be written)
 
-**3. Data model.** (to be written)
+3. Data model.
+
+Tables: prices holds one price per premise, item and day (Jan-Jun 2026); dim_item holds item name, unit, group and category; dim_premise holds premise name, address, type, state and district; basket_items lists the 21 items chosen by the basket rule.
+Keys: prices has a primary key on (date, premise, item), so no premise-item-day can appear twice. premise_code has a foreign key to dim_premise; item_code deliberately has none, because 154,441 rows (1.52%) use item codes missing from dim_item and a foreign key would have rejected them. I kept them and excluded them at analysis time instead.
+Views: the raw prices table is never edited; exclusions (unmatched items, outliers, wholesale) are applied in views, so every decision is visible in SQL and reversible. Materialized views store their results, so heavy steps over 10 million rows are fast to read, but they must be refreshed if the source data changes.
+Gap measure: For each item, I take every premise’s median price, so a premise counts once however often it reports. I then take the median of those across premises of one type (the “type price”) and across all premises (the “overall price”). The gap is (type price − overall price) ÷ overall price × 100, averaged over the 17 like-for-like items. For example, small Indian onions had a hypermarket type price of RM2.79 against an overall price of RM4.00, a gap of −30.3%; averaged across the 17 items, hypermarkets come out 7.8% below the typical premise price. Medians are used so that extreme prices don’t pull the result.
 
 ## Dashboard
 Power BI report: `powerbi/staple_prices.pbix` (three pages, each with a caption).
